@@ -5,6 +5,10 @@ plugins {
 android {
     signingConfigs {
         release {
+        storeFile file('/Users/chintanaddoni/Desktop/App_MAD/ChintanAddoni_Key')
+            storePassword 'Oneironaut@1'
+            keyAlias 'key0'
+            keyPassword 'Oneironaut@1'
         }
     }
     compileSdk 32
