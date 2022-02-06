@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import edu.neu.madcourse.numad22sp_chintanaddoni.databinding.FragmentFirstBinding;
 
@@ -42,7 +41,7 @@ public class FirstFragment extends Fragment {
         view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), click_button.class);
+                Intent intent = new Intent(getActivity(), clicky_click.class);
                 startActivity(intent);
             }
         });

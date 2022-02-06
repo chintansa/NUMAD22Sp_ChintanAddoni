@@ -2,16 +2,18 @@ package edu.neu.madcourse.numad22sp_chintanaddoni;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-public class click_button extends AppCompatActivity {
+public class clicky_click extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_key);
     }
+    @SuppressLint("NonConstantResourceId")
     public void click_button(View view){
         String text = "Pressed: ";
         switch (view.getId()){

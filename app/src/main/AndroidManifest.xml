@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD22Sp_ChintanAddoni">
         <activity
-            android:name=".click_button"
+            android:name=".clicky_click"
             android:parentActivityName=".MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
