@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import edu.neu.madcourse.numad22sp_chintanaddoni.databinding.FragmentFirstBinding;
 
@@ -30,11 +31,11 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
+        binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity().getApplicationContext(), "Name: Chintan Addoni\n" +
-                        "Email: sheshagiriaddoni.c@northeastern.edu", Toast.LENGTH_LONG).show();
+                NavHostFragment.findNavController(FirstFragment.this)
+                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
 
@@ -42,6 +43,14 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), clicky_click.class);
+                startActivity(intent);
+            }
+        });
+
+        view.findViewById(R.id.button_third).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), LinkCollector.class);
                 startActivity(intent);
             }
         });
