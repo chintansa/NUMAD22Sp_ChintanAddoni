@@ -106,49 +106,49 @@ public class Service extends AppCompatActivity {
             snack.show();
             return;
         }
-        loading.setVisibility(View.VISIBLE);
-        callWebService();
-//        final Handler handler1 = new Handler();
-//        Runnable runnable = new Runnable() {
-//
-//            int count = 0;
-//
-//            @Override
-//            public void run() {
-//                count++;
-//
-//                if (count == 1)
-//                {
-//                    loading.setText("Loading.");
-//                    loading.setVisibility(View.VISIBLE);
-//                }
-//                else if (count == 2)
-//                {
-//                    loading.setText("Loading..");
-//                    loading.setVisibility(View.VISIBLE);
-//                }
-//                else if (count == 3)
-//                {
-//                    loading.setText("Loading...");
-//                    loading.setVisibility(View.VISIBLE);
-//                }
-//
-//                if (count == 3)
-//                    count = 0;
-//
-//                handler1.postDelayed(this,  500);
-//            }
-//        };
-//        handler1.postDelayed(runnable, 0);
-//        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                callWebService();
-//                handler1.removeCallbacksAndMessages(null);
-//
-//            }
-//        }, 4000); // Millisecond 1000 = 1 sec
-//
+//        loading.setVisibility(View.VISIBLE);
+//        callWebService();
+        final Handler handler1 = new Handler();
+        Runnable runnable = new Runnable() {
+
+            int count = 0;
+
+            @Override
+            public void run() {
+                count++;
+
+                if (count == 1)
+                {
+                    loading.setText("Loading.");
+                    loading.setVisibility(View.VISIBLE);
+                }
+                else if (count == 2)
+                {
+                    loading.setText("Loading..");
+                    loading.setVisibility(View.VISIBLE);
+                }
+                else if (count == 3)
+                {
+                    loading.setText("Loading...");
+                    loading.setVisibility(View.VISIBLE);
+                }
+
+                if (count == 3)
+                    count = 0;
+
+                handler1.postDelayed(this,  500);
+            }
+        };
+        handler1.postDelayed(runnable, 0);
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                callWebService();
+                handler1.removeCallbacksAndMessages(null);
+
+            }
+        }, 4000); // Millisecond 1000 = 1 sec
+
    }
 
 
