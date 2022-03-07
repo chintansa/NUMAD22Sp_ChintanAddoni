@@ -89,14 +89,6 @@
                 android:layout_margin="10dp"
                 android:textSize="14sp"/>
 
-
-            <TextView
-                android:id="@+id/year"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="Get Details" />
-
             <TextView
                 android:id="@+id/released"
                 android:layout_width="wrap_content"
@@ -128,13 +120,6 @@
                 android:textSize="14sp"
                 android:text="" />
 
-            <TextView
-                android:id="@+id/writer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:textSize="14sp"
-                android:text="" />
 
             <TextView
                 android:id="@+id/language"

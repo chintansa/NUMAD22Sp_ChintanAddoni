@@ -28,12 +28,10 @@ public class Service extends AppCompatActivity {
     private ScrollView movieDetailsView;
     private TextView loading;
     private TextView title;
-    private TextView year;
     private TextView released;
     private TextView runtime;
     private TextView genre;
     private TextView director;
-    private TextView writer;
     private TextView language;
     private TextView country;
     private TextView plot;
@@ -43,12 +41,10 @@ public class Service extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.at_your_service);
         title = findViewById(R.id.title);
-        year = findViewById(R.id.year);
         released = findViewById(R.id.released);
         runtime = findViewById(R.id.runtime);
         genre = findViewById(R.id.genre);
         director = findViewById(R.id.director);
-        writer = findViewById(R.id.writer);
         language = findViewById(R.id.language);
         country = findViewById(R.id.country);
         loading = findViewById(R.id.loading);
@@ -61,12 +57,10 @@ public class Service extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         if (!title.getText().toString().isEmpty()) {
             savedInstanceState.putString("title", title.getText().toString().split(":", 2)[1]);
-            savedInstanceState.putString("year", year.getText().toString().split(":", 2)[1]);
             savedInstanceState.putString("released", released.getText().toString().split(":", 2)[1]);
             savedInstanceState.putString("runtime", runtime.getText().toString().split(":", 2)[1]);
             savedInstanceState.putString("genre", genre.getText().toString().split(":", 2)[1]);
             savedInstanceState.putString("director", director.getText().toString().split(":", 2)[1]);
-            savedInstanceState.putString("writer", writer.getText().toString().split(":", 2)[1]);
             savedInstanceState.putString("language", language.getText().toString().split(":", 2)[1]);
             savedInstanceState.putString("country", country.getText().toString().split(":", 2)[1]);
             savedInstanceState.putString("plot", plot.getText().toString().split(":", 2)[1]);
@@ -78,12 +72,10 @@ public class Service extends AppCompatActivity {
     public void onRestoreInstanceState( Bundle savedInstanceState) {
         if (savedInstanceState.get("title") != null) {
             title.setText(Html.fromHtml("<b>Title: </b>" + savedInstanceState.get("title").toString()));
-            year.setText(Html.fromHtml("<b>Year: </b>" + savedInstanceState.get("year").toString()));
             released.setText(Html.fromHtml("<b>Released: </b>" + savedInstanceState.get("released").toString()));
             runtime.setText(Html.fromHtml("<b>Runtime: </b>" + savedInstanceState.get("runtime").toString()));
             genre.setText(Html.fromHtml("<b>Genre: </b>" + savedInstanceState.get("genre").toString()));
             director.setText(Html.fromHtml("<b>Director: </b>" + savedInstanceState.get("director").toString()));
-            writer.setText(Html.fromHtml("<b>Writer: </b>" + savedInstanceState.get("writer").toString()));
             language.setText(Html.fromHtml("<b>Language: </b>" + savedInstanceState.get("language").toString()));
             country.setText(Html.fromHtml("<b>Country: </b>" + savedInstanceState.get("country").toString()));
             plot.setText(Html.fromHtml("<b>Plot: </b>" + savedInstanceState.get("plot").toString()));
@@ -147,7 +139,7 @@ public class Service extends AppCompatActivity {
                 handler1.removeCallbacksAndMessages(null);
 
             }
-        }, 4000); // Millisecond 1000 = 1 sec
+        }, 3000); // Millisecond 1000 = 1 sec
 
    }
 
@@ -158,12 +150,10 @@ public class Service extends AppCompatActivity {
     }
     private void resetData() {
         title.setText("");
-        year.setText("");
         released.setText("");
         runtime.setText("");
         genre.setText("");
         director.setText("");
-        writer.setText("");
         language.setText("");
         country.setText("");
         plot.setText("");
@@ -189,12 +179,10 @@ public class Service extends AppCompatActivity {
                             loading.setText("Movie not found!");
                         } else {
                             title.setText(Html.fromHtml("<b>Title: </b>" + movieDetails.get("Title").toString()));
-                            year.setText(Html.fromHtml("<b>Year: </b>" + movieDetails.get("Year").toString()));
                             released.setText(Html.fromHtml("<b>Released: </b>" + movieDetails.get("Released").toString()));
                             runtime.setText(Html.fromHtml("<b>Runtime: </b>" + movieDetails.get("Runtime").toString()));
                             genre.setText(Html.fromHtml("<b>Genre: </b>" + movieDetails.get("Genre").toString().replace('\n', ' ')));
                             director.setText(Html.fromHtml("<b>Director: </b>" + movieDetails.get("Director").toString()));
-                            writer.setText(Html.fromHtml("<b>Writer: </b>" + movieDetails.get("Writer").toString()));
                             language.setText(Html.fromHtml("<b>Language: </b>" + movieDetails.get("Language").toString()));
                             country.setText(Html.fromHtml("<b>Country: </b>" + movieDetails.get("Country").toString()));
                             plot.setText(Html.fromHtml("<b>Plot: </b>" + movieDetails.get("Plot").toString()));
@@ -202,11 +190,11 @@ public class Service extends AppCompatActivity {
                             movieDetailsView.setVisibility(View.VISIBLE);
                         }
                     } catch (Exception e) {
-                        System.out.println(e);
+                        System.out.println(e.getMessage());
                     }
                 });
             } catch (Exception e) {
-                System.out.println(e);
+                System.out.println(e.getMessage());
             }
         }
 
